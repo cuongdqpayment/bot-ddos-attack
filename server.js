@@ -100,5 +100,13 @@ app.use('/stats', function (req, res, next) {
 /**
  * Start the Web Server
  */
-http.createServer(app).listen(3000)
 
+
+
+var PORT =  process.env.PORT || 3000;
+http.createServer(app).listen(PORT,()=>{
+    console.log("Server is started with PORT: " 
+    + PORT
+    + "\n " + new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')
+    );
+});
